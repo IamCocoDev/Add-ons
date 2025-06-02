@@ -5,7 +5,7 @@ import {
 	meet,
 	MeetSidePanelClient,
 } from "@googleworkspace/meet-addons/meet.addons";
-import { CLOUD_PROJECT_NUMBER } from "@/constants";
+import { CLOUD_PROJECT_NUMBER, MAIN_STAGE_URL } from "@/constants";
 
 export default function Page() {
 	const [sidePanelClient, setSidePanelClient] = useState();
@@ -16,7 +16,7 @@ export default function Page() {
 			throw new Error("Side Panel is not yet initialized!");
 		}
 		await sidePanelClient.startActivity({
-			mainStageUrl: "http://localhost:3000/",
+			mainStageUrl: MAIN_STAGE_URL,
 		});
 	}
 
